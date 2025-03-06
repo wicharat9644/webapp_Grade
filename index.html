@@ -30,6 +30,17 @@
          }
       </style>
    </head>
+   <script>
+      function adjustIframe() {
+      const iframe = document.querySelector('iframe');
+      const screenWidth = window.innerWidth;
+      const screenHeight = window.innerHeight;
+      iframe.style.width = screenWidth + 'px';
+      iframe.style.height = screenHeight + 'px';
+   }
+   window.addEventListener('resize', adjustIframe);
+   window.addEventListener('load', adjustIframe);
+</script>
    <body>
       <iframe src="https://script.google.com/macros/s/AKfycby8Y6o8BTrgpL__FU0ItJ_NP0OxI2u8MDbWCNESnttSm2F2dpjfgKQtYVhtvaJSYyK5/exec"></iframe>
    </body>
