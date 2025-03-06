@@ -1,61 +1,12 @@
+
 <!DOCTYPE html>
+
 <html>
    <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
       <base target="_top">
-      <style>
-         /* Reset margin and padding for all elements */
-         * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-         }
-         /* Ensure html and body take full height */
-         html, body {
-            height: 100%;
-            overflow: hidden;
-         }
-         /* Container for iframe */
-         .iframe-container {
-            width: 100vw;
-            height: 100vh;
-            overflow: auto; /* เพิ่ม scrollbar หากเนื้อหาใหญ่เกินไป */
-            position: relative;
-         }
-         /* Make iframe fill the container */
-         iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-            transform: scale(0.9); /* ปรับขนาด iframe ให้เล็กลงเล็กน้อย */
-            transform-origin: top left;
-         }
-      </style>
-      <script>
-         function adjustIframe() {
-            const iframe = document.querySelector('iframe');
-            const screenWidth = window.innerWidth;
-            const screenHeight = window.innerHeight;
-
-            // ปรับขนาด iframe ให้พอดีกับหน้าจอ
-            iframe.style.width = screenWidth + 'px';
-            iframe.style.height = screenHeight + 'px';
-
-            // ปรับ scale ของ iframe ตามความจำเป็น
-            const scale = Math.min(screenWidth / 1200, screenHeight / 800); // ตัวอย่างการคำนวณ scale
-            iframe.style.transform = `scale(${scale})`;
-            iframe.style.transformOrigin = 'top left';
-         }
-
-         // ปรับขนาด iframe เมื่อโหลดหน้าเว็บและเมื่อเปลี่ยนขนาดหน้าจอ
-         window.addEventListener('load', adjustIframe);
-         window.addEventListener('resize', adjustIframe);
-      </script>
    </head>
    <body>
-      <div class="iframe-container">
-         <iframe src="https://script.google.com/macros/s/AKfycby8Y6o8BTrgpL__FU0ItJ_NP0OxI2u8MDbWCNESnttSm2F2dpjfgKQtYVhtvaJSYyK5/exec"></iframe>
-      </div>
+      <iframe style="position: absolute;top: 0;left: 0;width: 100%;height: 100%;border: 0;" src="https://script.google.com/macros/s/AKfycbz_UNERFh-60qzQ0TaOf7Br5TFrWfOd55PrwHfK21usTzdwlN-xp7DKiZQA86J4YlJw/exec"></iframe>
    </body>
 </html>
