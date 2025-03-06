@@ -25,6 +25,8 @@
             position: fixed;
             top: 0;
             left: 0;
+            transform: scale(0.9); /* ปรับขนาด iframe ให้เล็กลงเล็กน้อย */
+            transform-origin: top left;
          }
       </style>
       <script>
@@ -37,12 +39,10 @@
             iframe.style.width = screenWidth + 'px';
             iframe.style.height = screenHeight + 'px';
 
-            // ส่งคำสั่งไปยัง iframe เพื่อปรับ viewport
-            iframe.contentWindow.postMessage({
-               type: 'viewport',
-               width: screenWidth,
-               height: screenHeight
-            }, '*');
+            // ปรับ scale ของ iframe ตามความจำเป็น
+            const scale = Math.min(screenWidth / 1200, screenHeight / 800); // ตัวอย่างการคำนวณ scale
+            iframe.style.transform = `scale(${scale})`;
+            iframe.style.transformOrigin = 'top left';
          }
 
          // ปรับขนาด iframe เมื่อโหลดหน้าเว็บและเมื่อเปลี่ยนขนาดหน้าจอ
